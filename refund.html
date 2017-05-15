@@ -130,21 +130,27 @@
             };
         };
     </script>
-    <script src="js/jquery.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script>
         $(function(){
-			// 退货提交验证
-			$(".refund-submit").click(function() {							
-				if($("#refund-textarea").val()=="") {
-			        alert("请填写退货原因！");
-			        return false;
-			    }
-				if($(".z_addImg").length>5){
-					alert("最多可以上传5张图片！");
-			        return false;
-				}
-			});
-		})    	
+            // 退货提交验证
+            $(".refund-submit").click(function() {                          
+                if($("#refund-textarea").val()=="") {
+                    alert("请填写退货原因！");
+                    return false;
+                }
+                if($(".z_addImg").length>5){
+                    alert("最多可以上传5张图片！");
+                    return false;
+                }
+            });
+            $(".z_file").click(function() {                         
+                if($(".z_addImg").length>5){
+                    alert("最多可以上传5张图片！");
+                    return false;
+                }
+            });
+        })      
     </script>
 </body>
 </html>

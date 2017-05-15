@@ -1478,6 +1478,11 @@ header {
     margin: 0.3rem 0 0.5rem 0;
 }
 
+.refund-prompt {
+    margin-bottom: 1.333333rem;
+}
+
+
 .refund-prompt p {
     padding: 0 0.266667rem;
     font-size: 0.32rem;
@@ -1488,7 +1493,7 @@ header {
 }
 .add-photo {
     position: absolute;
-    top: 1rem;
+    top: 1.4rem;
     left: 0.4rem;
     font-size: 0.24rem;
 }
@@ -1578,6 +1583,10 @@ header {
 .z_cancel {
     border-right: 1px solid #ddd;
 }
+
+.z_cancel, .z_sure {
+    margin-top: 0.133333rem;
+    margin-bottom: 0.133333rem;}
 
 /*---------refund结束------------*/ 
 
