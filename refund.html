@@ -20,15 +20,31 @@
 				<div>
 					<textarea rows="10" id="refund-textarea"></textarea>
 				</div>
-				<div class="file-box">
-					<a href="javascript:;" class="file">
-							<div class="addfile">+</div>
-							<div>Add Photo</div>
-					    <input type="file" name="" id="">
-					</a>					
-				</div>
+    <div class="container">
+        <!--    照片添加    -->
+        <div class="z_photo">
+            <div class="z_file">
+                <input type="file" name="file" id="file" value="" accept="image/*" multiple onchange="imgChange('z_photo','z_file');" />
+				<div class="add-photo">Add Photo</div>
+            </div>
+
+        </div>
+
+        <!--遮罩层-->
+        <div class="z_mask">
+            <!--弹出框-->
+            <div class="z_alert">
+                <p>确定要删除这张图片吗？</p>
+                <p>
+                    <span class="z_cancel">取消</span>
+                    <span class="z_sure">确定</span>
+                </p>
+            </div>
+        </div>
+    </div>
 				<div class="submit-box">
-					<input class="refund-submit" type="submit" name="Submit" value="SUBMIT" /> 
+					<input class="refund-submit" type="submit" name="Submit" value="SUBMIT" />
+
 				</div> 
 			</form>
 		</article>
@@ -39,32 +55,96 @@
 
 		<footer class="sc-footer">
 			<div class="footNav">
-					<div>					
-							<a href="#" class="icon">
-								<span class="icon_Home"></span>
-								<p>Home</p>
-							</a>				
-					</div>
-					<div>
-							<a href="#"  class="icon">
-								<span class="icon_Cart"></span>
-								<p>Cart</p>
-							</a>
-					</div>
-					<div>
-							<a href="#" class="icon">
-								<span class="icon_Me"></span>
-								<p>Me</p>
-							</a>
-					</div>
-					<div>
-							<a href="#" class="icon">
-								<span class="icon_More"></span>
-								<p>More</p>
-							</a>			
-					</div>
+				<div>					
+					<a href="#" class="icon">
+						<span class="icon_Home"></span>
+						<p>Home</p>
+					</a>				
+				</div>
+				<div>
+					<a href="#"  class="icon">
+						<span class="icon_Cart"></span>
+						<p>Cart</p>
+					</a>
+				</div>
+				<div>
+					<a href="#" class="icon">
+						<span class="icon_Me"></span>
+						<p>Me</p>
+					</a>
+				</div>
+				<div>
+					<a href="#" class="icon">
+						<span class="icon_More"></span>
+						<p>More</p>
+					</a>			
+				</div>
 			</div>
 		</footer>			
 	</div>
+
+    <script type="text/javascript">
+        function imgChange(obj1, obj2) {
+            //获取点击的文本框
+            var file = document.getElementById("file");
+            //存放图片的父级元素
+            var imgContainer = document.getElementsByClassName(obj1)[0];
+            //获取的图片文件
+            var fileList = file.files;
+            //文本框的父级元素
+            var input = document.getElementsByClassName(obj2)[0];
+            var imgArr = [];
+            //遍历获取到得图片文件
+            for (var i = 0; i < fileList.length; i++) {
+                var imgUrl = window.URL.createObjectURL(file.files[i]);
+                imgArr.push(imgUrl);
+                var img = document.createElement("img");
+                img.setAttribute("src", imgArr[i]);
+                var imgAdd = document.createElement("div");
+                imgAdd.setAttribute("class", "z_addImg");
+                imgAdd.appendChild(img);
+                imgContainer.appendChild(imgAdd);
+            };
+            imgRemove();
+        };
+
+        function imgRemove() {
+            var imgList = document.getElementsByClassName("z_addImg");
+            var mask = document.getElementsByClassName("z_mask")[0];
+            var cancel = document.getElementsByClassName("z_cancel")[0];
+            var sure = document.getElementsByClassName("z_sure")[0];
+            for (var j = 0; j < imgList.length; j++) {
+                imgList[j].index = j;
+                imgList[j].onclick = function() {
+                    var t = this;
+                    mask.style.display = "block";
+                    cancel.onclick = function() {
+                        mask.style.display = "none";
+                    };
+                    sure.onclick = function() {
+                        mask.style.display = "none";
+                        t.style.display = "none";
+                    };
+
+                }
+            };
+        };
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function(){
+			// 退货提交验证
+			$(".refund-submit").click(function() {							
+				if($("#refund-textarea").val()=="") {
+			        alert("请填写退货原因！");
+			        return false;
+			    }
+				if($(".z_addImg").length>5){
+					alert("最多可以上传5张图片！");
+			        return false;
+				}
+			});
+		})    	
+    </script>
 </body>
 </html>
