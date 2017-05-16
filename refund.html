@@ -20,28 +20,28 @@
 				<div>
 					<textarea rows="10" id="refund-textarea"></textarea>
 				</div>
-    <div class="container">
-        <!--    照片添加    -->
-        <div class="z_photo">
-            <div class="z_file">
-                <input type="file" name="file" id="file" value="" accept="image/*" multiple onchange="imgChange('z_photo','z_file');" />
-				<div class="add-photo">Add Photo</div>
-            </div>
+                <div class="container">
+                    <!--    照片添加    -->
+                    <div class="z_photo">
+                        <div class="z_file">
+                            <input type="file" name="file" id="file" value="" accept="image/*" multiple onchange="imgChange('z_photo','z_file');" />
+            				<div class="add-photo">Add Photo</div>
+                        </div>
 
-        </div>
+                    </div>
 
-        <!--遮罩层-->
-        <div class="z_mask">
-            <!--弹出框-->
-            <div class="z_alert">
-                <p>确定要删除这张图片吗？</p>
-                <p>
-                    <span class="z_cancel">取消</span>
-                    <span class="z_sure">确定</span>
-                </p>
-            </div>
-        </div>
-    </div>
+                    <!--遮罩层-->
+                    <div class="z_mask">
+                        <!--弹出框-->
+                        <div class="z_alert">
+                            <p>Are you sure you want to delete this picture?</p>
+                            <p>
+                                <span class="z_cancel">cancel</span>
+                                <span class="z_sure">sure</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
 				<div class="submit-box">
 					<input class="refund-submit" type="submit" name="Submit" value="SUBMIT" />
 
@@ -50,7 +50,7 @@
 		</article>
 
 		<div class="refund-prompt">
-			<p>The CSR will contact you within 5 days. beginning form the day you submit the refund application.</p>
+			<p>The CSR will contact you within 5 days,beginning form the day you submit the refund application.</p>
 		</div>
 
 		<footer class="sc-footer">
@@ -125,7 +125,6 @@
                         mask.style.display = "none";
                         t.style.display = "none";
                     };
-
                 }
             };
         };
@@ -136,17 +135,17 @@
             // 退货提交验证
             $(".refund-submit").click(function() {                          
                 if($("#refund-textarea").val()=="") {
-                    alert("请填写退货原因！");
+                    alert("Please fill in the reason for return!");
                     return false;
                 }
                 if($(".z_addImg").length>5){
-                    alert("最多可以上传5张图片！");
+                    alert("You can upload 5 pictures at most!");
                     return false;
                 }
             });
             $(".z_file").click(function() {                         
                 if($(".z_addImg").length>5){
-                    alert("最多可以上传5张图片！");
+                    alert("You can upload 5 pictures at most!");
                     return false;
                 }
             });

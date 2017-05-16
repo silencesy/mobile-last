@@ -9,12 +9,14 @@
 </head>
 <body>
 	<div class="layout">
-		<header class="sc-header add-header">
+		<header class="sc-header">
 			<a class="head-backbox" href="#">
-				<span class="icon_back add_back"></span>
+				<span class="icon_back"></span>
 			</a>
-			<div class="add-new">Add a new address</div>
-			<button class="add-btn">Done</button>
+			<div class="title-text">
+				<span class="add-new">Add a new address</span>
+				<span class="add-btn">Done</span>
+			</div>
 		</header>
 		<div class="address-container">
 			<!-- address-content start -->
@@ -78,25 +80,26 @@
 			// 默认地址的选择
 			$(".add-del").click(function() {
 				$(".address-cir").toggleClass("address-right");
+				$(".address-defau").toggleClass("defau-active");
 			});
 			// 手机号,名字,地址填写的验证
 			$(".add-btn").click(function() {								
 				var myrey = /^[\u4e00-\u9fa5_a-zA-Z0-9]+$/;
 				var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
 				if(!myrey.test($("#Fullname").val())) { 
-				    alert('请输入有效的名字！'); 
+				    alert("Please enter a valid name!"); 
 				    return false; 
 				}
 				if(!myreg.test($("#Phone").val())) { 
-				    alert('请输入有效的手机号码！'); 
+				    alert("Please enter a valid phone number!"); 
 				    return false; 
 				}
 				if($(".add-dd").text()=="province> city >district") {
-			        alert("请选择区域！");
+			        alert("Please select region!");
 			        return false;
 			    }				
 				if($(".fill").val()=="") {
-			        alert("请填写详细地址！");
+			        alert("Please fill in the details!");
 			        return false;
 			    }
 			});
