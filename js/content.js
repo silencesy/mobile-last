@@ -223,7 +223,9 @@ $(function(){
     $(".address-del").click(function(){
             $(this)
             .find('.address-circle')
-            .addClass("address-right");
+            .addClass("address-right")
+            .siblings('.address-defau')
+            .css("color",'#f6442b');
     $(this)
     .find('.address-circle')
     .addClass("address-color");
@@ -232,7 +234,9 @@ $(function(){
             .siblings('.address-content')
             .find('.address-circle')
             .removeClass('address-right')
-            .removeClass('address-color');  
+            .removeClass('address-color')
+            .siblings('.address-defau')
+            .css("color",'#000'); 
         });
         $('.address-delete').on('click',function(){
             $(this).parents('.address-content').remove();
