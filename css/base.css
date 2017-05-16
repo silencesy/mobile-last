@@ -1173,6 +1173,9 @@ header {
 .footAdd span {
     color: #fff;   
 }
+.footAdd a {
+    color: #fff;   
+}
 /*-- No address end--*/
 
 /*-- review --*/
@@ -1483,7 +1486,6 @@ header {
     margin-bottom: 1.333333rem;
 }
 
-
 .refund-prompt p {
     padding: 0 0.266667rem;
     font-size: 0.32rem;
@@ -1504,7 +1506,7 @@ header {
     overflow: auto;
     clear: both;
     margin: 0.2rem auto;
-    border: 1px solid #555;
+    border: 1px solid #ccc;
 }
 
 .z_photo img {
