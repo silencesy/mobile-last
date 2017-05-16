@@ -1358,9 +1358,6 @@ header {
 /*------Order Confirmation end----*/ 
 
 /*-- Add-address --*/
-.add-header {
-    height: 0.906667rem;
-}
 .personal-dz {
     width: 100%;
     margin-bottom: 0.2rem;
@@ -1410,22 +1407,14 @@ header {
 .personal-dz input {
     font-size: 0.32rem;
 }
-.add-new {
-    position: absolute;
-    left: 31%;
-    top: 0.226667rem;
-    font-size: 0.373333rem;
-}
 .add-btn {
-    border-width: 0;
-    border: none; 
-    outline: none;
-    background-color: #fff;
-    font-size: 0.32rem;
-    display: inline-block;
-    position: absolute;
-    right: 0.333333rem;
-    bottom: 0.24rem;
+    float: right;
+    height: 0.8rem;
+    width: 1.333333rem;
+    font-size: 0.373333rem;
+    color: #919191;
+    cursor: pointer;
+    margin-right: -20px;
 }
 .address-cir {
     vertical-align: middle;
@@ -1433,12 +1422,12 @@ header {
 .set-default label {
     font-size: 0.4rem;
 }
-@media screen and (max-width:320px){
-    .add_back {
-        margin-bottom: 0.13rem;
-    }    
+.defau-active {
+    color: #f6442b;
 }
-
+.add-new {
+    margin-left: 1.333333rem;
+}
 /*-- Add-address end --*/
 
 /*---------refund开始------------*/
@@ -1581,7 +1570,7 @@ header {
 }
 
 .z_cancel {
-    border-right: 1px solid #ddd;
+    // border-right: 1px solid #ddd;
 }
 
 .z_cancel, .z_sure {
