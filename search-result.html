@@ -158,12 +158,14 @@
 	</div>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script>
-		$('input').focus(function(){
-            $('.sc-footer').css('display','none');  
-        })
-        $('input').blur(function(){
-            $('.sc-footer').css('display','block');  
-        })
+		$(function(){
+			$("input").focus(function(){
+	        	$(".sc-footer").css("display","none");  
+	    	})
+	    	$("input").blur(function(){
+	        	$(".sc-footer").css("display","block");  
+	   		})
+	    })
 	</script>
 </body>
 </html>

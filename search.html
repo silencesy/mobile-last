@@ -76,15 +76,17 @@
 	</div>
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script>
-		$(".del").click(function() {
-            $(".history-txt").css("display","none")       
-		});
-		$('input').focus(function(){
-        	$('.sc-footer').css('display','none');  
-    	})
-    	$('input').blur(function(){
-        	$('.sc-footer').css('display','block');  
-   		})
+		$(function(){
+			$(".del").click(function() {
+	            $(".history-txt").css("display","none")       
+			});
+			$("input").focus(function(){
+	        	$(".sc-footer").css("display","none");  
+	    	})
+	    	$("input").blur(function(){
+	        	$(".sc-footer").css("display","block");  
+	   		})
+	   	})
 	</script>
 </body>
 </html>

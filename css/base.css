@@ -455,8 +455,9 @@ header {
 }
 .container .demi .demi-left {
     position: relative;
-    width: 80%;
+    width: 75%;
     height: 3.08rem;
+    display: inline-block;
 }
 .container .demi .demi-left img {
     float: left;
@@ -485,8 +486,12 @@ header {
     left: 1.466667rem;
 }
 .container .demi .demi-right {
-    margin-right: 0.266667rem;
-    position: relative;
+    width: 19%;
+    display: inline-block;
+}
+.container .demi .demi-right img {
+    width: 80%;
+    margin-bottom: 0.8rem;
 }
 .container .demi .demi-right .icon_go {
     position: absolute;
@@ -585,9 +590,9 @@ header {
     right: 0.8rem;
     top: 0.4rem;
     margin: 0;
-    width: 0.306667rem;
+    width: 0.35rem;
     height: 0.306667rem;
-    background-position: -1.146667rem 0;
+    background-position: -1.13rem 0;
 }
 .search .sc-input {
     position: relative;
@@ -608,6 +613,7 @@ header {
     position: absolute;
     right: 0.933333rem;
     top: 0.4rem;
+    width: 0.426667rem;
 }
 .search-container .search-history {
     padding-top: 0.8rem;   
@@ -1003,6 +1009,10 @@ header {
     vertical-align: middle;
     width: 17%;
 }
+.de-over img {
+    width: 0.426667rem;
+}
+
 /*-- pay弹出框开始--*/
 .de-type div .de-active {
     background-color: #f6432c;
