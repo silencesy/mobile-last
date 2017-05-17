@@ -83,7 +83,7 @@
 				$(".address-defau").toggleClass("defau-active");
 			});
 			// 手机号,名字,地址填写的验证
-			$(".add-btn").click(function() {								
+			$(".add-btn").click(function() {
 				var myrey = /^[\u4e00-\u9fa5_a-zA-Z0-9]+$/;
 				var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
 				if(!myrey.test($("#Fullname").val())) { 
@@ -103,6 +103,12 @@
 			        return false;
 			    }
 			});
+			$('input').focus(function(){
+        		$('.express-area-box').css('display','none');  
+    		})
+    		$('input').blur(function(){
+        		$('.express-area-box').css('display','block');  
+   			})
 		})
   	</script>
 </body>
